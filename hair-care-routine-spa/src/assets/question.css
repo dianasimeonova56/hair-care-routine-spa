@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.question h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+  margin: 30px;
+}
