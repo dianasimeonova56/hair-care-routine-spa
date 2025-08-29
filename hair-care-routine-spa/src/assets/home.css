@@ -7,8 +7,6 @@
 }
 
 .hero-img img {
-  /* object-fit:cover;
-  object-position: center; */
   width: auto;
   height: 100vh;
   opacity: 0.75;
@@ -16,7 +14,7 @@
   min-width: 100%;
 }
 
-.btn-group {
+.group {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,31 +23,20 @@
   text-align: center;
 }
 
-.btn-group h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
+.group h1 {
   font-size: 80px;
   margin: 30px;
 }
 
-.btn-group p,
-.btn-group button {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.btn-group button {
+.btn-start {
   padding: 14px 40px;
   border-radius: 8px;
   border-color: transparent;
   background-color: #C3EDFF;
-  transition: background-color 0.5s ease-in, border-color 0.5s ease-in, font-size 0.5s ease-in, padding 0.5s ease-in;
+  transition: background-color 0.5s ease-in;
 }
 
-.btn-group button:hover {
+.btn-start:hover {
   background-color: #87c5e0;
-  border-color: #000000;
-  font-size: 17px;
-  padding: 16px 42px;
+  cursor: pointer;
 }
