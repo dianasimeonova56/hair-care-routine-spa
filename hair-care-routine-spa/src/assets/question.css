@@ -1,11 +1,37 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 20px;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .question h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
-  font-size: 80px;
-  margin: 30px;
+    font-size: 40px;
+    margin: 0;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.btn-group .back {
+    text-decoration-color: #677487;
+}
+
+.btn-group p {
+    color: #677487;
+    font-size: 16px;
 }
