@@ -1,0 +1,20 @@
+.option {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #5BC1ED;
+    padding: 14px 40px 14px 20px;
+    box-shadow: none;
+    outline: none;
+    transition: background-color 0.5s ease;
+    min-width: 189px;
+    text-align: left;
+}
+
+.option:hover {
+    background-color: #5BC1ED;
+}
+
+.option:focus {
+  outline: none;
+  box-shadow: none;
+}
