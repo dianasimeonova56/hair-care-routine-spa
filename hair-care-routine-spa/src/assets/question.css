@@ -3,10 +3,30 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 100vh;
+    gap: 40px;
+    position: relative;
+}
+
+.aside {
+    position: absolute;
+    right:150px;
+    top: 37%;
+    width: 91px;
+    height: 91px;
+}
+
+
+.main-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     flex-direction: column;
     height: 100vh;
     gap: 20px;
 }
+
 
 .options-group {
     display: flex;
@@ -34,4 +54,9 @@
 .btn-group p {
     color: #677487;
     font-size: 16px;
+}
+
+.CircularProgressbar-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
