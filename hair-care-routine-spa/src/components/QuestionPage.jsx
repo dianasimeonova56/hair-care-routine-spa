@@ -7,11 +7,13 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css";
 import questions from "../data/questions.json";
 
-const QuestionPage = () => {
+const QuestionPage = ({ answers, onAnswer, onGoBack }) => {
     const { id } = useParams();
     const navigate = useNavigate();
+    let isLastQuestion = (id == Object.keys(questions).length);
 
     const currentQ = questions[Number(id) - 1];
+    const selectedOption = answers[currentQ.id];
 
     return (
         <div className="container">
@@ -21,19 +23,31 @@ const QuestionPage = () => {
                 </div>
                 <div className="options-group">
                     {currentQ.options.map((option) => (
-                        <Option key={option.id} id={option.id} text={option.text} />
+                        <Option
+                            key={option.id}
+                            id={option.id}
+                            text={option.text}
+                            isSelected={selectedOption === option.id}
+                            onClick={() => onAnswer(currentQ.id, option.text)} />
                     ))}
                 </div>
                 <div className="btn-group">
                     {/* <Link to={'..'} className="back">
                         <p>Back</p>
                     </Link> */}
-                    <p className="back" onClick={() => navigate(-1)}>
+                    <p className="back" onClick={() => {
+                        navigate(-1);
+                        onGoBack(currentQ.id)
+                    }}>
                         Back
                     </p>
-                    <Link to={`/q/${currentQ.id + 1}`}>
-                        <Button text="Next question →"></Button>
-                    </Link>
+                    {isLastQuestion
+                        ? <Link to={`/result`}>
+                            <Button text="Discover your results"></Button>
+                        </Link>
+                        : <Link to={`/q/${currentQ.id + 1}`}>
+                            <Button text="Next question →"></Button>
+                        </Link>}
                 </div>
             </div>
             <div className="aside">
