@@ -1,55 +1,45 @@
 import React from 'react'
 import '../assets/question.css'
-import Option from '../components/Option'
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
-import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar'
+import Option from './Option'
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import Button from './Button';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css";
+import questions from "../data/questions.json";
 
-const options = [
-    {
-        "id": "a",
-        "text": "Straight"
-    },
-    {
-        "id": "b",
-        "text": "Curly"
-    },
-    {
-        "id": "c",
-        "text": "Wavy"
-    },
-    {
-        "id": "d",
-        "text": "Fine"
-    }
-]
+const QuestionPage = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-const Q1 = () => {
+    const currentQ = questions[Number(id) - 1];
+
     return (
         <div className="container">
             <div className="main-part">
                 <div className="question">
-                    <h1>What's your hair type or texture?</h1>
+                    <h1>{currentQ.text}</h1>
                 </div>
                 <div className="options-group">
-                    {options.map((option) => (
+                    {currentQ.options.map((option) => (
                         <Option key={option.id} id={option.id} text={option.text} />
                     ))}
                 </div>
                 <div className="btn-group">
-                    <Link to={'..'} className="back">
+                    {/* <Link to={'..'} className="back">
                         <p>Back</p>
-                    </Link>
-                    <Link to='/q2'>
+                    </Link> */}
+                    <p className="back" onClick={() => navigate(-1)}>
+                        Back
+                    </p>
+                    <Link to={`/q/${currentQ.id + 1}`}>
                         <Button text="Next question →"></Button>
                     </Link>
                 </div>
             </div>
             <div className="aside">
-                <CircularProgressbar 
-                    value={`${(1/5) * 100}`}
-                    text={`${1}/5`}
+                <CircularProgressbar
+                    value={`${(currentQ.id / 5) * 100}`}
+                    text={`${currentQ.id}/5`}
                     strokeWidth={5}
                     styles={buildStyles({
                         pathColor: `#AADDF3`,
@@ -61,4 +51,4 @@ const Q1 = () => {
     )
 }
 
-export default Q1  
+export default QuestionPage  

@@ -13,7 +13,7 @@ const Home = () => {
         <h1>Build a self care routine suitable for you</h1>
         <p>Take out test to get a personalised self care <br />
           routine based on your needs.</p>
-        <Link to="/q1">
+        <Link to="/q/1">
           {/* <Button text="Start the quiz"></Button> */}
           <button className='btn-start'>Start the quiz</button>
         </Link>

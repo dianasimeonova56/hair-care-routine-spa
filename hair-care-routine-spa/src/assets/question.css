@@ -48,7 +48,9 @@
 }
 
 .btn-group .back {
+    text-decoration: underline;
     text-decoration-color: #677487;
+    cursor: pointer;
 }
 
 .btn-group p {
