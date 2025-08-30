@@ -1,9 +1,10 @@
 import React from 'react'
 import '../assets/option.css'
 
-const Option = ({id, text}) => {
+const Option = ({ id, text, isSelected, onClick }) => {
   return (
-    <button className="option">{id}. {text}</button>
+    <button className={`option ${isSelected ? "selected" : ""}`}
+      onClick={onClick}>{id}. {text}</button>
   )
 }
 
