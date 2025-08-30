@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "text": "What's your hair type or texture?",
+    "options": [
+      { "id": "a", "text": "Straight" },
+      { "id": "b", "text": "Curly" },
+      { "id": "c", "text": "Wavy" },
+      { "id": "d", "text": "Fine" }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "How often do you wash your hair?",
+    "options": [
+      { "id": "a", "text": "Daily" },
+      { "id": "b", "text": "Every other day" },
+      { "id": "c", "text": "Twice a week" },
+      { "id": "d", "text": "Once a week" },
+      { "id": "e", "text": "Once every two weeks" }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "What benefit do you look for in your hair products?",
+    "options": [
+      { "id": "a", "text": "Anti-breakage" },
+      { "id": "b", "text": "Hydration" },
+      { "id": "c", "text": "Soothing dry scalp" },
+      { "id": "d", "text": "Repairs the appearance of damaged hair" },
+      { "id": "e", "text": "Volume" },
+      { "id": "f", "text": "Curl and coil enhancing." }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Is there anything troubling you about your hair?",
+    "options": [
+      { "id": "a", "text": "Breakage" },
+      { "id": "b", "text": "Frizz" },
+      { "id": "c", "text": "Scalp dryness" },
+      { "id": "d", "text": "Damage" },
+      { "id": "e", "text": "Tangling" }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "What is your natural hair color(s) today?",
+    "options": [
+      { "id": "a", "text": "Black" },
+      { "id": "b", "text": "Brown" },
+      { "id": "c", "text": "Red/Orange" },
+      { "id": "d", "text": "Silver/Grey" }
+    ]
+  }
+]
