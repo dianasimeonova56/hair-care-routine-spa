@@ -27,7 +27,7 @@ const QuestionPage = ({ answers, onAnswer, onGoBack }) => {
                             key={option.id}
                             id={option.id}
                             text={option.text}
-                            isSelected={selectedOption === option.id}
+                            isSelected={selectedOption === option.text}
                             onClick={() => onAnswer(currentQ.id, option.text)} />
                     ))}
                 </div>
@@ -46,7 +46,7 @@ const QuestionPage = ({ answers, onAnswer, onGoBack }) => {
                             <Button text="Discover your results"></Button>
                         </Link>
                         : <Link to={`/q/${currentQ.id + 1}`}>
-                            <Button text="Next question →"></Button>
+                            <Button text="Next question →" status={selectedOption ? false : true}></Button>
                         </Link>}
                 </div>
             </div>

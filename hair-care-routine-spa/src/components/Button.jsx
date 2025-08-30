@@ -1,9 +1,9 @@
 import React from 'react'
 import '../assets/button.css'
 
-function Button({text}) {
+function Button({text, status}) {
   return (
-    <button className="btn">{text}</button>
+    <button className="btn" disabled={status}>{text}</button>
   )
 }
 

@@ -1,14 +1,21 @@
 .btn {
-    padding: 14px 40px;
-    border-radius: 8px;
-    border-color: transparent;
-    background-color: #C3EDFF;
-    transition: background-color 0.5s ease-in;
-    color: #1C2635;
-    font-size: 16px;
+  padding: 14px 40px;
+  border-radius: 8px;
+  border-color: transparent;
+  background-color: #87c5e0;
+  transition: background-color 0.5s ease-in;
+  color: #1C2635;
+  font-size: 16px;
 }
 
-.btn:hover {
+/* .enabled {
   background-color: #87c5e0;
+} */
+
+.btn:disabled {
+  background-color: #C3EDFF;
+}
+
+.btn:hover:enabled {
   cursor: pointer;
 }
