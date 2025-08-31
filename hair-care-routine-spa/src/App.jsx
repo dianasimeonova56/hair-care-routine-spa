@@ -32,6 +32,7 @@ const App = () => {
 
   const deleteSavedAnswers = () => {
     localStorage.removeItem("quizAnswers");
+    setAnswers({})
   }
 
   return (
