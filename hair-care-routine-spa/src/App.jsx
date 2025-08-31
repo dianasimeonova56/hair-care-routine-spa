@@ -7,7 +7,10 @@ import QuestionPage from './components/QuestionPage';
 import Result from './pages/Result'
 
 const App = () => {
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState(() => {
+    const saved = localStorage.getItem("quizAnswers");
+    return saved ? JSON.parse(saved) : {};
+  });
 
   const handleAnswer = (questionId, selectedOption) => {
     setAnswers(prev => {
