@@ -18,7 +18,6 @@ function Result({ answers, onDeleteSavedAnswers }) {
     const loadProducts = async () => {
       const allProducts = await FetchResults();
       const filtered = FilterResults(allProducts, answers)
-      console.log(filtered);
 
       setProducts(filtered)
     };
