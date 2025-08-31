@@ -10,10 +10,14 @@ const App = () => {
   const [answers, setAnswers] = useState({});
 
   const handleAnswer = (questionId, selectedOption) => {
-    setAnswers(prev => ({ ...prev, [questionId]: selectedOption }));
+    setAnswers(prev => {
+      const updated = { ...prev, [questionId]: selectedOption };
+      localStorage.setItem("quizAnswers", JSON.stringify(updated));
+      return updated;
+    });
   };
 
-  const handleGoBack = (questionId,) => {
+  const handleGoBack = (questionId) => {
     if (questionId != undefined) {
       setAnswers(prev => {
         const updated = { ...prev };
@@ -23,12 +27,16 @@ const App = () => {
     }
   }
 
+  const deleteSavedAnswers = () => {
+    localStorage.removeItem("quizAnswers");
+  }
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home deleteAnswers={deleteSavedAnswers} />} />
         <Route path="/q/:id" element={<QuestionPage answers={answers} onAnswer={handleAnswer} onGoBack={handleGoBack} />} />
-        <Route path="/result" element={<Result answers={answers} />} />
+        <Route path="/result" element={<Result answers={answers} onDeleteSavedAnswers={deleteSavedAnswers} />} />
       </Routes>
     </Router>
   )
