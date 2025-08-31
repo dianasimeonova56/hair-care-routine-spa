@@ -13,8 +13,8 @@
 .cards {
     /* height: 55vh; */
     position: absolute;
-    top: 50vh;
-    left: 50vh;
+    top: 50%;
+    left: 15%;
 }
 
 .bottom {
@@ -54,14 +54,16 @@
 
 .btn-retake {
     padding: 14px 40px;
+    border: 2px solid #FFFFFF;
     border-radius: 8px;
-    border-color: #FFFFFF;
     background-color: transparent;
     transition: background-color 0.5s ease-in;
     color: #FFFFFF;
     font-size: 16px;
     width: 238px;
     height: 47px;
+    box-shadow: none;
+    outline: none;
 }
 
 .btn-retake:hover {
@@ -100,14 +102,4 @@
     font-size: 24px;
     align-self: center;
     margin: 0;
-}
-
-.mySwiper {
-    max-width: 800px;
-    padding-bottom: 40px;
-}
-
-.mySwiper .swiper-slide {
-    display: flex;
-    justify-content: center;
 }
