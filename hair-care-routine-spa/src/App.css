@@ -17,5 +17,6 @@ h1, h2, h3, h4 {
 
 :root {
   --swiper-pagination-color: #5BC1ED;
-  --swiper-pagination-bullet-inactive-color: #E3E3E3;
+  --swiper-pagination-bullet-inactive-color: #c8bebe;
+  --swiper-pagination-bullet-size: 8px;
 }
