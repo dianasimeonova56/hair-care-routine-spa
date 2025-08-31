@@ -85,17 +85,29 @@
     color: #1C2635
 }
 
-.description{
-    display:flex;
+.description {
+    display: flex;
     flex-direction: column;
     margin: 30px 30px;
     gap: 12px
 }
+
 .description p {
     font-size: 16px;
 }
+
 .description h1 {
     font-size: 24px;
     align-self: center;
     margin: 0;
+}
+
+.mySwiper {
+    max-width: 800px;
+    padding-bottom: 40px;
+}
+
+.mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
 }
