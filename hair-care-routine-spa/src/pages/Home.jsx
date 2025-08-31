@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../assets/home.css'
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 
-const Home = () => {
+const Home = ({deleteAnswers}) => {
+  useEffect(() => {
+    deleteAnswers();
+  });
   return (
     <div className="hero">
       <div className="hero-img">
