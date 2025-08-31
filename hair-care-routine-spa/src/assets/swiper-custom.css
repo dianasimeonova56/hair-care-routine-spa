@@ -1,0 +1,43 @@
+.swiper-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mySwiper {
+    max-width: 800px;
+    padding-bottom: 40px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1C2635;
+    background-color: #EEF7FB;
+    border: 3px;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.swiper-button-next::after {
+    background-image: url(../../public/images/arrow.png) !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    justify-self: center;
+    content: '';
+}
+
+.swiper-button-disabled {
+    opacity: 0.5;
+    cursor:auto;
+}
