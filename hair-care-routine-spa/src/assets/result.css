@@ -1,0 +1,101 @@
+.results {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    height: 55vh;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+.cards {
+    /* height: 55vh; */
+    position: absolute;
+    top: 50vh;
+    left: 50vh;
+}
+
+.bottom {
+    height: 60vh;
+}
+
+.result-img img {
+    width: 90%;
+    height: 65vh;
+    opacity: 0.75;
+    max-height: 100vh;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    gap: 20px;
+}
+
+.info h1 {
+    font-size: 40px;
+    margin: 20px;
+}
+
+.info p {
+    font-size: 16px;
+}
+
+.btn-retake {
+    padding: 14px 40px;
+    border-radius: 8px;
+    border-color: #FFFFFF;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in;
+    color: #FFFFFF;
+    font-size: 16px;
+    width: 238px;
+    height: 47px;
+}
+
+.btn-retake:hover {
+    background-color: #FFFFFF;
+    color: #1C2635;
+}
+
+.recommendations {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.main-card {
+    width: 300px;
+    height: 380px;
+    border-radius: 8px;
+    background-color: #EEF7FB;
+    display: flex;
+    flex-direction: column;
+    color: #1C2635
+}
+
+.description{
+    display:flex;
+    flex-direction: column;
+    margin: 30px 30px;
+    gap: 12px
+}
+.description p {
+    font-size: 16px;
+}
+.description h1 {
+    font-size: 24px;
+    align-self: center;
+    margin: 0;
+}
