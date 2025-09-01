@@ -12,17 +12,15 @@ import '../assets/swiper-custom.css'
 
 function Result({ answers, onDeleteSavedAnswers }) {
   const [products, setProducts] = useState([])
-  console.log(products.length);
-
 
   //initial load products
   useEffect(() => {
     const loadProducts = async () => {
-
       let toSet = [];
       let saved = JSON.parse(localStorage.getItem("products"));
 
       if (saved && saved.length > 0) {
+        //new arrays - wishlist first, then rest of products as to not mutate the products state
         let wishlistArr = saved.filter(s => s.isWishList);
         let nonWishListArr = saved.filter(s => s.isWishList === false);
         let newArr = [...wishlistArr, ...nonWishListArr];
