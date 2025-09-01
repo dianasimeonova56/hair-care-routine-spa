@@ -35,10 +35,14 @@ const App = () => {
     setAnswers({})
   }
 
+  const deleteSavedProducts = () => {
+    localStorage.removeItem("products");
+  }
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home deleteAnswers={deleteSavedAnswers} />} />
+        <Route path="/" element={<Home deleteAnswers={deleteSavedAnswers} deleteProducts={deleteSavedProducts} />} />
         <Route path="/q/:id" element={<QuestionPage answers={answers} onAnswer={handleAnswer} onGoBack={handleGoBack} />} />
         <Route path="/result" element={<Result answers={answers} onDeleteSavedAnswers={deleteSavedAnswers} />} />
       </Routes>
