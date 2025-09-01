@@ -28,7 +28,7 @@
 }
 
 .swiper-button-next::after {
-    background-image: url(../../public/images/arrow.png) !important;
+    background-image: url(/images/arrow.png) !important;
     background-size: contain;
     background-repeat: no-repeat;
     width: 18px;

@@ -2,23 +2,27 @@ import React, { useState } from 'react'
 
 import '../assets/card.css'
 
-function Card({ product }) {
+function Card({ product, onWishList }) {
   const mainIcon = '/images/heart.png';
   const filledIcon = '/images/heart-filled.png';
 
-  const isWishlist = false;
-
   const [activeIcon, setActiveIcon] = useState(mainIcon);
-
+  
   return (
     <div className="card">
       <div className='card-img'>
         <div className='fav'>
-          <img
-            src={activeIcon}
-            onMouseOver={() => setActiveIcon(filledIcon)}
-            onMouseLeave={() => setActiveIcon(mainIcon)}
-          />
+          {product.isWishList
+            ? <img
+              src={filledIcon} 
+              onClick={() => onWishList(product.id)}/>
+            : <img
+              src={activeIcon}
+              onMouseOver={() => setActiveIcon(filledIcon)}
+              onMouseLeave={() => setActiveIcon(mainIcon)}
+              onClick={() => onWishList(product.id)}
+            />}
+
         </div>
         <div className='img'>
           <img src={product.images[0].src} />
