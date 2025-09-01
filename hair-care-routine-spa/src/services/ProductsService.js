@@ -72,4 +72,8 @@ export const FilterResults = (allProducts, answers) => {
     })
 }
 
+export const AttachWishList = (products) => {
+    return products.map(p => ({ ...p, isWishList: false }))
+}
+
 
