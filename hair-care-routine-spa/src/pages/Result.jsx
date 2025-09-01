@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { FetchResults, FilterResults } from '../services/ProductsService.js';
+import { FetchResults, FilterResults, AttachWishList } from '../services/ProductsService.js';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination, Navigation } from 'swiper/modules';
 
@@ -11,19 +11,51 @@ import 'swiper/css/pagination';
 import '../assets/swiper-custom.css'
 
 function Result({ answers, onDeleteSavedAnswers }) {
-  //if no answers -> error or display a message, dont render anything
   const [products, setProducts] = useState([])
+  console.log(products.length);
 
+
+  //initial load products
   useEffect(() => {
     const loadProducts = async () => {
-      const allProducts = await FetchResults();
-      const filtered = FilterResults(allProducts, answers)
 
-      setProducts(filtered)
+      let toSet = [];
+      let saved = JSON.parse(localStorage.getItem("products"));
+
+      if (saved && saved.length > 0) {
+        let wishlistArr = saved.filter(s => s.isWishList);
+        let nonWishListArr = saved.filter(s => s.isWishList === false);
+        let newArr = [...wishlistArr, ...nonWishListArr];
+
+        toSet = newArr;
+      } else if (!saved || saved.length == 0) {
+        const allProducts = await FetchResults();
+        const filtered = FilterResults(allProducts, answers);
+        const wishlitProducts = AttachWishList(filtered)
+        toSet = wishlitProducts;
+      }
+      setProducts(toSet);
     };
+
     loadProducts()
   }, [answers])
 
+  //set products in local storage - TO PERSIST
+  useEffect(() => {
+    if (products && products.length > 0) {
+      localStorage.setItem("products", JSON.stringify(products));
+    }
+  }, [products]);
+
+  //on click of card, add/remove product from wishlist
+  const handleWishList = (productId) => {
+    setProducts(prev => {
+      const updated = prev.map(p =>
+        p.id === productId ? { ...p, isWishList: !p.isWishList } : p //search array for the id and update the wishlist
+      )
+      return updated;
+    });
+  };
 
   return (
     <div className="results">
@@ -72,13 +104,13 @@ function Result({ answers, onDeleteSavedAnswers }) {
                 >
                   {products.map((p) => (
                     <SwiperSlide key={p.id}>
-                      <Card product={p} />
+                      <Card product={p} onWishList={handleWishList} />
                     </SwiperSlide>
                   ))}
                 </Swiper>
                 <div className="swiper-button-next"></div>
               </div>
-              : "Loading"
+              : <p>Loading</p>
             }
           </div>
         </div>
