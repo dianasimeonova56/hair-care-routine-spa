@@ -3,6 +3,7 @@
     flex-direction: column;
 }
 
+
 .top {
     height: 55vh;
     position: relative;
@@ -108,4 +109,103 @@
     font-size: 24px;
     align-self: center;
     margin: 0;
+}
+
+.cards,
+.info,
+.recommendations {
+    transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 1400px) {
+    .cards {
+        display: flex;
+        position: relative;
+        top: 45%;
+        left: 35%;
+    }
+
+    .recommendations {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .recommendations p {
+        left: 15%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bottom {
+        justify-content: center;
+        align-items: center;
+        /* height: 150vh; */
+    }
+
+    .info {
+        gap: 15px;
+    }
+
+    .info h1 {
+        font-size: 35px;
+    }
+
+    .info p {
+        font-size: 14px;
+    }
+
+    .btn-retake {
+        padding: 10px 35px;
+        width: 200px;
+        height: 47px;
+    }
+
+    .cards {
+        display: flex;
+        position: relative;
+        /* top: 25%; */
+        left: 5%;
+    }
+
+    .recommendations {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .recommendations p {
+        left: 5%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    /* .bottom {
+        height: 150vh;
+    } */
+
+
+    .info {
+        gap: 10px;
+    }
+
+    .info h1 {
+        font-size: 30px;
+    }
+
+    .info p {
+        font-size: 12px;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        top: 20%;
+        left: 1%;
+    }
+
+    .recommendations p {
+        left: 5%;
+    }
 }

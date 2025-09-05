@@ -40,3 +40,10 @@
   background-color: #87c5e0;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .group h1 {
+    font-size: 32px;
+    margin: 15px;
+  }
+}

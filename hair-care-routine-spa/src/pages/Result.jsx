@@ -89,8 +89,6 @@ function Result({ answers, onDeleteSavedAnswers }) {
             {products && products.length > 0
               ? <div className='swiper-container'>
                 <Swiper
-                  spaceBetween={20}
-                  slidesPerView={2}
                   mousewheel={true}
                   pagination={{ clickable: true, dynamicBullets: true, }}
                   // navigation={true}
@@ -99,6 +97,30 @@ function Result({ answers, onDeleteSavedAnswers }) {
                   }}
                   modules={[Mousewheel, Pagination, Navigation]}
                   className="mySwiper"
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                      // spaceBetween: 10,
+                      direction: 'vertical',
+                    },
+                    600: {
+                      slidesPerView: 1,
+                      // spaceBetween: 15,
+                      direction: 'horizontal',
+                    },
+                    900: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                    1024: {
+                      slidesPerView: 2,
+                      spaceBetween: 15,
+                    },
+                    1400: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    },
+                  }}
                 >
                   {products.map((p) => (
                     <SwiperSlide key={p.id}>
