@@ -23,9 +23,9 @@ const App = () => {
   const handleGoBack = (questionId) => {
     if (questionId != undefined) {
       setAnswers(prev => {
-        const updated = { ...prev };
-        delete updated[questionId];
-        return updated;
+        const { [questionId]: _, ...rest } = prev;
+        localStorage.setItem("quizAnswers", JSON.stringify(rest));
+        return rest;
       });
     }
   }
