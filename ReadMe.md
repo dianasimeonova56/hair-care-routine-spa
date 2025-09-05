@@ -22,7 +22,7 @@ A single-page application (SPA) built with React that displays results and allow
 
 ## Live Demo
 
-[View the app on Vercel](https://your-project-name.vercel.app)
+[View the app on Vercel](https://hair-care-routine-spa.vercel.app/)
 
 ---
 
