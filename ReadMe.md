@@ -33,11 +33,14 @@ A single-page application (SPA) built with React that displays results and allow
 ```bash
 git clone https://github.com/dianasimeonova56/hair-care-routine-spa.git
 cd hair-care-routine-spa
+```
 
 2. Install dependencies
 ```bash
 npm install
+```
 
 3. Run
 ```bash
 npm run dev
+```
